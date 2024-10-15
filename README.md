@@ -32,9 +32,9 @@ This project is a step-by-step evolution of a simple string calculator in JavaSc
 - Enhanced the `add()` method to handle multiple comma-separated numbers and return their sum.
 - Example:
     ```javascript
-console.log(calculator.add(""));     
-console.log(calculator.add("1"));     
-console.log(calculator.add("1,2,3")); 
+    console.log(calculator.add(""));     
+    console.log(calculator.add("1"));     
+    console.log(calculator.add("1,2,3")); 
     ```
 
 ### Step 3: Handle Newlines as Delimiters
