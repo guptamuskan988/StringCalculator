@@ -1,4 +1,5 @@
-// Added the negative numbers exceptions with try and catch block
+// Taking the user defined input for the number and removed all the test cases
+const readline = require('readline');
 class StringCalculator {
     add(numbers) {
         if (numbers === "") {
@@ -31,16 +32,17 @@ class StringCalculator {
         return sum;
     }
 }
+const userInput = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 const calculator = new StringCalculator();
-try {
-console.log(calculator.add(""));           
-console.log(calculator.add("1"));            
-console.log(calculator.add("1,2,3"));        
-console.log(calculator.add("1\n2,3"));  
-console.log(calculator.add("//|\n1,2,3"));//TDD test case which will provide output as 1 because delimiter is changed to | this but seperated by ,
-console.log(calculator.add("//;\n1;2"));  //Changed the delimiter to ;   
-console.log(calculator.add("//|\n1|2|3"));//Changed the delimiter to |
-    console.log(calculator.add("1,-2,3,-4"));   // Exception: negative numbers not allowed: -2, -4
-} catch (e) {
-    console.error(e.message);
-}
+userInput.question('Enter a string of numbers to calculate the sum:\n', (input) => {
+    try {
+        const result = calculator.add(input);
+        console.log(`Sum: ${result}`);
+    } catch (e) {
+        console.error(e.message);
+    }
+    userInput.close();
+});
