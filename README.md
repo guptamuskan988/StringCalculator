@@ -44,11 +44,11 @@ This project is a step-by-step evolution of a simple string calculator in JavaSc
 - Modified the code to allow newlines (`\n`) as valid delimiters, in addition to commas.
 - Example:
     ```javascript
-  console.log(calculator.add(""));          
-console.log(calculator.add("1"));       
-console.log(calculator.add("1,2,3"));  
-console.log(calculator.add("-1,-3")); //Will fail because we are not handling negative numbers
-console.log(calculator.add("1\n2,3"));
+    console.log(calculator.add(""));          
+    console.log(calculator.add("1"));       
+    console.log(calculator.add("1,2,3"));  
+    console.log(calculator.add("-1,-3")); //Will fail because we are not handling negative numbers
+    console.log(calculator.add("1\n2,3"));
     ```
 
 ### Step 4: Support Custom Delimiters
@@ -58,13 +58,13 @@ console.log(calculator.add("1\n2,3"));
 - Enabled the use of custom delimiters. If a string starts with `//[delimiter]\n`, it uses the specified delimiter.
 - Example:
     ```javascript
-console.log(calculator.add(""));           
-console.log(calculator.add("1"));            
-console.log(calculator.add("1,2,3"));        
-console.log(calculator.add("1\n2,3"));  
-console.log(calculator.add("//|\n1,2,3"));//TDD test case which will provide output as 1 because delimiter is changed to | this but seperated by ,
-console.log(calculator.add("//;\n1;2"));  //Changed the delimiter to ;   
-console.log(calculator.add("//|\n1|2|3"));//Changed the delimiter to |
+    console.log(calculator.add(""));           
+    console.log(calculator.add("1"));            
+    console.log(calculator.add("1,2,3"));        
+    console.log(calculator.add("1\n2,3"));  
+    console.log(calculator.add("//|\n1,2,3"));//TDD test case which will provide output as 1 because delimiter is changed         to | this but seperated by ,
+    console.log(calculator.add("//;\n1;2"));  //Changed the delimiter to ;   
+    console.log(calculator.add("//|\n1|2|3"));//Changed the delimiter to |
     ```
 
 ### Step 5: Throw Exception for Negative Numbers
